@@ -20,8 +20,8 @@ const getProducts = async (query: Query): Promise<Product[]> => {
             isFeatured: query.isFeatured
         },
     });
-
-    const res = await fetch(url,{next: {revalidate: 0}});
+    console.log(url)
+    const res = await fetch(url,{next: {revalidate: 1}});
     return res.json();
 };
 
